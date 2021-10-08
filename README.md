@@ -1,27 +1,38 @@
-# DemoApp
+# Angular Academy Demo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+Demo Project coded during an <a href="https://angular.ac" target="_blank">Angular Academy Workshop</a> in 2021.
 
-## Development server
+[![Angular Academy](https://www.angularacademy.ca/images/classroom.jpg "Angular Academy")](https://www.angularacademy.ca)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Angular Academy is a world-class hands-on instructor-led Angular training provider.
+We have a long history of <a href="https://www.angularacademy.ca/world-firsts" target="_blank">World Firsts</a>...
 
-## Code scaffolding
+Visit www.angularacademy.ca for our list of Angular related courses:
+* <a href="https://www.angularacademy.ca/courses/angular-fundamentals-training" target="_blank">Angular Fundamentals</a>
+* <a href="https://www.angularacademy.ca/courses/advanced-angular-training" target="_blank">Advanced Angular</a>
+* <a href="https://www.angularacademy.ca/courses/testing-angular-training" target="_blank">Testing Angular</a>
+* <a href="https://www.angularacademy.ca/courses/angular-rxjs-training" target="_blank">RxJS Workshop</a>
+* <a href="https://www.angularacademy.ca/courses/angular-architecture-training" target="_blank">Angular Architecture</a>
+* <a href="https://www.angularacademy.ca/courses/advanced-angular-testing-training" target="_blank">Advanced Angular Testing</a>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Angular Certifications!
 
-## Build
+Test your Angular skills, try a certification!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[![Angular Academy](https://www.angularacademy.ca/images/cert.png "Angular Certifications")](https://www.angularacademy.ca/angular-certification)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Local installation
 
-## Running end-to-end tests
+You need to restore the npm dependencies first:
+Run `npm i`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Run it locally
 
-## Further help
+Run `ng s -o` for a dev server.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The app is running on `http://localhost:4200/` and will automatically reload if you change any of the source files.
+
+## Try it live in Stackblitz without installation!
+
+<a href="https://stackblitz.com/github/ldex/Angular-Academy-270" target="_blank">Angular Demo App</a>
