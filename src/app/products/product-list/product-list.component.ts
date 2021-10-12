@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from '../product.interface';
 
@@ -11,6 +12,7 @@ export class ProductListComponent implements OnInit {
 
   title: string = 'Products';
   products: Product[];
+  products$: Observable<Product[]>;
   selectedProduct: Product;
 
   onSelect(product: Product): void {
@@ -22,7 +24,14 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.products$ = this.productService.products$;
+
+    // this
+    //   .productService
+    //   .products$
+    //   .subscribe(
+    //     results => this.products = results
+    //   )
   }
 
 }

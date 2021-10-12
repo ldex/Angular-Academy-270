@@ -2,7 +2,11 @@
     {{ title }}
 </h2>
 
-<ul class="products">
+<ng-template #loading>
+    <h2 class="loading">Loading products</h2>
+</ng-template>
+
+<ul class="products" *ngIf="products$ | async as products;else loading">
     <li *ngFor="let product of products"
         [class.discontinued]="product.discontinued"
         [class.selected]="selectedProduct === product"
