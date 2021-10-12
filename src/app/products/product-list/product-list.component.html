@@ -1,0 +1,16 @@
+<h2>
+    {{ title }}
+</h2>
+
+<ul class="products">
+    <li *ngFor="let product of products"
+        [class.discontinued]="product.discontinued"
+        (click)="onSelect(product)">
+        <span class="name">{{ product.name | uppercase }}</span>
+        <span class="description">{{ product.description }}</span>
+        <span class="price">{{ product.price | currency:'CAD':'symbol-narrow':'.2' }}</span>
+    </li>
+</ul>
+
+<app-product-detail [product]="selectedProduct"></app-product-detail>
+
