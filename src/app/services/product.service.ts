@@ -17,7 +17,13 @@ export class ProductService {
   }
 
   initProducts() {
-    this.products$ = this.http.get<Product[]>(this.baseUrl);
+    this.products$ = this
+                      .http
+                      .get<Product[]>(this.baseUrl)
+                      .pipe(
+                        delay(1500), // Fake delay!!
+                        tap(console.table)
+                      );
   }
 
 }
