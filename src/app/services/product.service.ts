@@ -28,6 +28,10 @@ export class ProductService {
               )
   }
 
+  deleteProduct(id: number): Observable<any> {
+    return this.http.delete(this.baseUrl + id);
+  }
+
   initProducts() {
     let url:string = this.baseUrl + `?$orderby=ModifiedDate%20desc`;
 
