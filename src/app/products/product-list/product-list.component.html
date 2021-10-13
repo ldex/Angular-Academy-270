@@ -2,20 +2,48 @@
     {{ title }}
 </h2>
 
-<ng-template #loading>
-    <h2 class="loading">Loading products</h2>
-</ng-template>
+<div>
+    {{ (products$ | async)?.length }} products
+</div>
 
-<ul class="products" *ngIf="products$ | async as products;else loading">
-    <li *ngFor="let product of products"
-        [class.discontinued]="product.discontinued"
-        [class.selected]="selectedProduct === product"
-        (click)="onSelect(product)">
-        <span class="name">{{ product.name | uppercase }}</span>
-        <span class="description">{{ product.description }}</span>
-        <span class="price">{{ product.price | currency:'CAD':'symbol-narrow':'.2' }}</span>
-    </li>
-</ul>
+<!-- Error -->
+<div *ngIf="errorMessage" class="errorMessage">
+    {{ errorMessage }}
+</div>
 
-<app-product-detail [product]="selectedProduct"></app-product-detail>
+<!-- No error -->
+<div *ngIf="!errorMessage">
 
+
+
+    <ng-template #loading>
+        <h2 class="loading">Loading products</h2>
+    </ng-template>
+
+    <ul class="products" *ngIf="products$ | async as products;else loading">
+        <li *ngFor="let product of products | slice:start:end"
+            [class.discontinued]="product.discontinued"
+            [class.selected]="selectedProduct === product"
+            (click)="onSelect(product)">
+            <span class="name">{{ product.name | uppercase }}</span>
+            <span class="description">{{ product.description }}</span>
+            <span class="price">{{ product.price | currency:'CAD':'symbol-narrow':'.2' }}</span>
+        </li>
+    </ul>
+
+    <div>
+        <button (click)="previousPage()"
+                [disabled]="start == 0">
+            < Previous Page
+        </button>
+        Page {{ currentPage }}
+        <button (click)="nextPage()"
+                [disabled]="(products$ | async)?.length <= end">
+            Next Page >
+        </button>
+    </div>
+
+    <app-product-detail [product]="selectedProduct"></app-product-detail>
+
+
+</div>
